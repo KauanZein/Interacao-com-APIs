@@ -3,58 +3,61 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Interação com APIs | Create com POST</title>
+    <title>Interação com APIs</title>
 </head>
 <body>
-    <h1>CREATE com POST 🎅🏿</h1>
+    <h1>UPDATE com PUT 🆒🆙</h1>
     <a href="./index.html">Home</a>
 
     <form action="" method="post">
         
         <div class="controle-form">
             <label for="idProduto">ID:</label>
-            <input type="text" id="idProduto" name="idProduto" disabled>
+            <input type="number" min="1" id="idProduto" name="idProduto" required>
         </div>
 
         <div class="controle-form">
             <label for="nome">Nome:</label>
-            <input type="text" id="nomeProduto" name="nomeProduto">
+            <input type="text" id="nomeProduto" name="nomeProduto" required>
         </div>
         
         <div class="controle-form">
             <label for="tipoProduto">Tipo:</label>
             <select name="tipoProduto" id="tipoProduto">
                 <option value="Controle">Controle</option>
+                <option value="Segurança">Segurança</option>
                 <option value="Suspensão">Suspensão</option>
                 <option value="Carroceria">Carroceria</option>
                 <option value="Acessório">Acessório</option>
             </select>
         </div>
 
-        <button type="button" id="cadastrar">Cadastrar</button>
+        <button type="button" id="atualizar">Atualizar</button>
     </form>
     
     <div id="produtos"></div>
 
     <script>
         buscaProdutos();
-        document.querySelector('#cadastrar').addEventListener('click', () => {
+        document.querySelector('#atualizar').addEventListener('click', () => {
             
             const dadosProduto = {
                 "id": null,
                 "nome": document.querySelector('#nomeProduto').value,
                 "tipo": document.querySelector('#tipoProduto').value
             }
+
+            const idProduto = document.querySelector('#idProduto').value;
             
-            fetch('https://automatic-space-giggle-7v959wrgwxx63wqxr-3000.app.github.dev/produtos', {
-                method: 'POST',
+            fetch(`https://automatic-space-giggle-7v959wrgwxx63wqxr-3000.app.github.dev/produtos/${idProduto}`, {
+                method: 'PUT',
                 headers: {
                     'Content-type': 'application/json'
                 },
                 body: JSON.stringify(dadosProduto)
             }).then(resposta => {
                 if (resposta.ok) {
-                    window.alert('Produto cadastrado!');
+                    window.alert('Produto atualizado!');
                     buscaProdutos();
                 } else {
                     window.alert('Erro');

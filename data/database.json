@@ -18,11 +18,27 @@
     },
     {
       "id": 36,
-      "nome": "jhkh"
+      "nome": "Buzina",
+      "tipo": "Segurança"
     },
     {
       "id": 37,
       "nome": "Escapamento"
+    },
+    {
+      "id": 38,
+      "nome": "Alavanca do câmbio",
+      "tipo": "Controle"
+    },
+    {
+      "id": 39,
+      "nome": "Alavanca da seta",
+      "tipo": "Controle"
+    },
+    {
+      "id": 40,
+      "nome": "",
+      "tipo": "Controle"
     }
   ],
   "clientes": [
