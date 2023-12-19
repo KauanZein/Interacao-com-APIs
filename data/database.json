@@ -2,7 +2,8 @@
   "produtos": [
     {
       "id": 1,
-      "nome": "Retrovisor"
+      "nome": "Amortecedor",
+      "tipo": "Controle"
     },
     {
       "id": 2,
@@ -39,6 +40,11 @@
       "id": 40,
       "nome": "",
       "tipo": "Controle"
+    },
+    {
+      "id": 41,
+      "nome": "Banco",
+      "tipo": "Acessório"
     }
   ],
   "clientes": [
